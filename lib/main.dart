@@ -1,20 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:practice_app1/pages/home_page.dart';
+import 'package:practice_app1/pages/login_page.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Material(
-        child: Center(
-          child: Text('Welcome to Flutter 2'),
-        ),
-      ),
+    return MaterialApp(
+      theme: ThemeData(primarySwatch: Colors.deepPurple),
+      routes: {
+        '/': (context) => LoginPage(),
+        '/login': (context) => LoginPage(),
+        '/home': (context) => HomePage()
+      },
     );
   }
 }
